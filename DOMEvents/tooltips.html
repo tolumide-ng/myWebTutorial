@@ -1,0 +1,80 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <style>
+    body {
+      height: 2000px;
+      /* make body scrollable, the tooltip should work after the scroll */
+    }
+
+    .tooltip {
+      position: fixed;
+      padding: 10px 20px;
+      border: 1px solid #b3c9ce;
+      border-radius: 4px;
+      text-align: center;
+      font: italic 14px/1.3 arial, sans-serif;
+      color: #333;
+      background: #fff;
+      box-shadow: 3px 3px 3px rgba(0, 0, 0, .3);
+    }
+  </style>
+</head>
+
+<body>
+
+  <p>LaLaLa LaLaLa LaLaLa LaLaLa LaLaLa LaLaLa LaLaLa LaLaLa LaLaLa</p>
+  <p>LaLaLa LaLaLa LaLaLa LaLaLa LaLaLa LaLaLa LaLaLa LaLaLa LaLaLa</p>
+
+  <button data-tooltip="the tooltip is longer than the element" style='psoition: relative'>Short button</button>
+  <button data-tooltip="HTML<br>tooltip" style='position: relative;'>One more button</button>
+
+  <p>Scroll the page to make buttons appear on the top, check if the tooltips show up correctly.</p>
+
+
+  <script>
+    //document listens for mouseover and mousout events on buttons
+    document.addEventListener('mouseover', show);
+    document.addEventListener('mouseout', remove);
+
+    function show(event){
+      if(!event.target.dataset.tooltip){
+        return;
+      }
+      let span = document.createElement('span');
+      let tip = event.target.dataset.tooltip;
+      //what to display
+      span.innerHTML = tip;
+
+      //coordinates to display
+
+      let coords = event.target.getBoundingClientRect();
+      let left = coords.left
+      if(left <0) left=0;
+
+      let top = coords.top + event.target.offsetHeight + 5;
+      
+      if(top<0) {
+        top= coords.top+event.target.offsetHeight+5;
+      }
+
+      span.style.left = left+'px';
+      span.style.top = top+'px';
+
+      //add class to the span element
+      span.classList.add('tooltip');
+      document.body.append(span);
+   }
+
+      function remove(event){
+        let tooltip= document.querySelector('.tooltip');
+        if(event.target != event.target.dataset.tooltip){
+          tooltip.remove();
+        }
+      }
+  </script>
+
+</body>
+</html>
