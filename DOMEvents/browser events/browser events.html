@@ -1,0 +1,61 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <style>
+    #field {
+      width: 200px;
+      height: 150px;
+      border: 10px solid black;
+      background-color: #00FF00;
+      overflow: hidden;
+      position: relative;
+      cursor: pointer;
+    }
+
+    #ball{
+      width: 40px;
+      height: 40px;
+      position: absolute;
+    }
+  </style>
+</head>
+
+<body style="height:2000px">
+
+  Click on a field to move the ball there.
+  <br> The ball should never leave the field.
+
+
+  <div id="field">
+    <img src="https://en.js.cx/clipart/ball.svg" id="ball"> . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+  </div>
+
+<script>
+  //declare field and ball variable
+  let field = document.getElementById('field');
+  let ball = document.getElementById('ball');
+
+  //add event to listen for clicks on field
+  field.addEventListener('click', bambi);
+
+  //the function bambi that reacts to the click event on field
+  function bambi(event){
+
+    //exact coordinates of the click without the clientTop and clientLeft respectively
+    let top = event.clientY - field.getBoundingClientRect().top;
+    let left = event.clientX -field.getBoundingClientRect().left;
+
+    //make the ball respond to the click event on field by changing its position relative to the field
+    ball.style.top = top - field.clientTop - (ball.offsetHeight/2)+'px';
+    ball.style.left = left - field.clientLeft - (ball.offsetWidth/2)+'px';
+
+    //adios -Tolumide-ng
+  }
+
+
+</script>
+</body>
+</html>

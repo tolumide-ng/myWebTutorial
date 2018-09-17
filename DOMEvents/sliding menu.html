@@ -1,0 +1,48 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+</head>
+<body>
+<style>
+	ul{
+		list-style-type: none;
+		margin-top: 3px;
+		display: none;
+		padding-left: 10px;
+	}
+
+	#select.toggle ul{
+		display: block;
+	}
+	#select #span::before{
+		content: '▶';
+		font-size: 14px;
+		color: brown;
+	}
+	#select.toggle #span::before{
+		content: '▼';
+		font-size: 14px;
+		color: red;
+	}
+</style>
+
+<div id='select'>
+  <span id='span'>Sweeties (click me)!</span>
+  <ul>
+    <li>Cake</li>
+    <li>Donut</li>
+    <li>Honey</li>
+  </ul>
+</div>
+
+<script>
+	let select = document.getElementById('select');
+	let span = document.getElementById('span');
+	span.onclick = function(event){
+		select.classList.toggle('toggle');
+	}
+</script>
+
+</body>
+</html>
