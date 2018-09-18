@@ -1,0 +1,39 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<title>Event Delegation</title>
+  <meta charset="utf-8">
+  <style>
+    #contents {
+      padding: 5px;
+      border: 1px green solid;
+    }
+  </style>
+</head>
+
+<body>
+
+  <fieldset id="contents">
+    <legend>#contents</legend>
+    <p>
+      How about to read <a href="http://wikipedia.org">Wikipedia</a> or visit <a href="http://w3.org"><i>W3.org</i></a> and learn about modern standards?
+    </p>
+  </fieldset>
+
+<script>
+	let contents = document.getElementById('contents');
+	document.addEventListener('click', handler);
+	function handler(event){
+		//target must be or be nested within an anchor element
+		if(!event.target.closest('a')){
+			return;
+		}
+		let target= event.target.closest('a');
+		alert(target.href);
+		//was that a mistake or you want to leave
+		if(!confirm(`Visit ${target.href}`))event.preventDefault();
+	}
+
+</script>
+</body>
+</html>
