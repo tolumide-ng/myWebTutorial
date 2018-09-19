@@ -25,7 +25,10 @@
 			width: 100px;
 			height: 100px;
 			display: inline-block;
-			transition: transform 600ms cubic-bezier(1, 0.21, 0.2, 1);
+			transition: transform 600ms cubic-bezier(1, 0.21, 0.2, 1); /*dictates how the transition should go about- transform(name of the property to transition=>check in trigger:hover .box
+			-600ms=>how long should this whole transition take?)
+			cubic-bezier... => what style of animation do we want, it could be ease-in-out or any other rather than the cubic-bezier
+			delay => Not show in this case(it means how long we want the transition to be delayed before it begins*/
 			pointer-events: none;
 		}
 		.trigger:hover .box{
