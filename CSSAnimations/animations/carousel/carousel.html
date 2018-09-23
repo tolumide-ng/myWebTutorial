@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Carousel with animations</title>
+	<meta charset="utf-8">
+</head>
+<body>
+	<p>Let use see if it is possible to use CSS Animations for Carousel creation</p>
+
+
+	<div>
+		<img src="img1.jpg" height='400px' width="700px" alt="rhinoceros">
+		<img src="img2.jpg" height='400px' width="700px" alt="big horn sheep">
+		<img src="img3.jpg" height='400px' width="700px" alt="impala">
+		<img src="img4.jpg" height='400px' width="700px" alt="narwhal">
+		<img src="img5.jpg" height='400px' width="700px" alt="blackbuck">
+		<img src="img6.jpg" height='400px' width="700px" alt="moose">
+	</div>
+
+	<style>
+		div{
+			width: 700px;
+			display: flex;
+		}
+		img{
+			transform: translate(-100%);
+			transition-property: transform;
+			transition-duration: 9s;
+			transition-timing-function: linear;
+		}
+	</style>
+</body>
+</html>

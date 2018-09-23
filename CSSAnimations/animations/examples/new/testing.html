@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+	<title>Animation: testing</title>
+	<meta charset="utf-8">
+</head>
+
+<body>
+	
+	<div class="example example-2">
+		<div class="switch is-transitioned">
+			<div class="on">on</div>
+			<div class="off">off</div>
+			<div class="handle"></div>
+		</div>
+	</div>
+
+	<style>
+		.example-2{
+			height: 400px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			background: #e0f2f1;
+		}
+		.example-2 .switch{
+			display: flex;
+			text-align: center;
+			border-radius: 200px;
+			background: #ef5350;
+			width: 100px;
+			height: 50px;
+			overflow: hidden;
+			position: relative;
+			transition: background ease-in-out 0.5s;
+		}
+
+		.example-2 .switch > div {
+			line-height: 50px;
+			color: white;
+			font-weight: 600;
+		}
+
+		.example-2 .switch.is-transitioned{
+			background: #009688;
+		}
+		.example-2 .switch.is-transitioned .handle{
+			transform: translateX(50px);
+		}
+
+		.example-2 .on{
+			width: 50%;
+		}
+		.example-2 .off{
+			width: 50%;
+		}
+		.example-2 .handle{
+			cursor: pointer;
+			width: 46px;
+			height: 46px;
+			border-radius: 50%;
+			background: white;
+			position: absolute;
+			top: 2px;
+			left: 2px;
+			box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.4);
+			transition: transform ease-in-out 0.5s;
+		}
+	</style>
+
+<script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
+<script>
+	$('.example-2 .switch').click(function(){
+  $(this).toggleClass('is-transitioned');
+});
+</script>
+</body>
+</html>

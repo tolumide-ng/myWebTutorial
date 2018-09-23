@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+	<title>Animations: class 2</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+	<div class="box">
+	</div>
+
+		<div class='mother'>
+		<div class="daughter">
+			<div class="spinner">
+			</div>
+		</div>
+	</div>
+
+	<script>
+		let box= document.querySelector('.box');
+		box.onclick = function(){
+			this.classList.toggle('pause');
+		}
+
+		let mother = document.querySelector('.mother');
+		mother.onclick = function(){
+			this.classList.toggle('pause');
+		}
+	</script>
+</body>
+</html>

@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang='en-US'>
+<head>
+	<meta charset="utf-8">
+	<title>Spinners, Loaders, and Jazz</title>
+</head>
+<body>
+	<div class="wrap">
+		<h1>SPINNERS</h1>
+		<div class="spinner spinner-1"></div>
+		<div class="spinner spinner-2"></div>
+		<div class="spinner spinner-3"></div>
+		<div class="spinner spinner-4"></div>
+		<div class="spinner spinner-5"><span></span><span></span><span></span>
+	</div>
+	</div>
+
+	<style>
+		body{
+			padding: 100px;
+			background: #eee;
+		}
+
+		.wrap{
+			text-align: center;
+			vertical-align: middle;
+			margin-bottom: 100px;
+			background: white;
+			padding-bottom: 100px;
+			box-shadow: 0px 40px 60px -20px rgba(0, 0, 0, 0.2);
+		}
+
+		h1{
+			padding: 50px;
+		}
+		.spinner{
+			width: 100px;
+			height: 100px;
+			background: #eee;
+			border-radius: 50%;
+			position: relative;
+			margin: 50px;
+			display: inline-block;
+		}
+
+		.spinner:after, .spinner:before{
+			content:'';
+			display: block;
+			width: 100px;
+			height: 100px;
+			border-radius: 50%;
+		}
+
+		.spinner-1:after{
+			position: absolute;
+			top: -4px;
+			left: -4px;
+			border: 4px solid transparent;
+			border-top-color: orangered;
+			border-bottom-color: orangered;
+			-webkit-animation: spinny 1s linear infinite;
+			animation: spinny 1s linear infinite;
+		}
+		@-webkit-keyframes spinny{
+			0%{
+				-webkit-transform: rotate(0deg) scale(1);
+						transform: rotate(0deg) scale(1);
+			}
+			50%{
+				-webkit-transform: rotate(45deg) scale(1.1);
+						transform: rotate(45deg) scale(1.1);
+			}
+			100%{
+				-webkit-transform: rotate(360deg) scale(1);
+						tranform: rotate(360deg) scale(1);
+			}
+		}
+
+		.spinner-2{
+			-webkit-animation: spin 2s linear infinite;
+					-animation: spin 2s linear infinite;
+		}
+		.spinner-2:before, .spinner-2:after{
+			height: 20px;
+			width: 20px;
+			background:orangered;
+			position: absolute;
+			top: -10px;
+			left: 50%;
+			margin-left: -10px;
+			-webkit-animation: bouncy 1s ease-in infinite;
+					animation: bouncy 1s ease-in infinite;
+		}
+		.spinner-2:after{
+			top: auto;
+			bottom: -10px;
+			-webkit-animation: bouncy 0.5s ease-in infinite;
+					animation: bouncy 0.5s ease-in infinite;
+		}
+
+		@-webkit-keyframes bouncy {
+			0%, 100% {
+				-webkit-transform: translateY(0px);
+						transform: translateY(0px);
+			}
+			50% {
+				-webkit-transform: translateY(30px);
+						-transform: translateY(30px);
+			}
+		}
+
+		@keyframes bouncy{
+			0%, 100%{
+				-webkit-transform: translateY(0px);
+						transform: translateY(0px);
+					}
+			50% {
+				-webkit-transform: translateY(30px);
+				transform: translateY(30px);
+			}
+		}
+
+		@-webkit-keyframes spin{
+			0% {
+				-webkit-transform: rotate(0deg);
+						-tranform: rotate(0deg);
+			}
+			100%{
+				-webkit-transform: rotate(360deg);
+				transform: rotate(360deg);
+			}
+		}
+		@keyframes spin{
+			0%{
+				-webkit-transform: rotate(0deg);
+						transform: rotate(0deg);
+			}
+			100%{
+				-webkit-transform: rotate(360deg);
+						-transform: rotate(360deg);
+			}
+		}
+
+		.spinner-3{
+			background: none;
+			border: 4px solid #eee;
+		}
+		.spinner-3:after{
+			width: 4px;
+			height: 66px;
+			background: orangered;
+			border-radius: 0px;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			margin-left: -2px;
+			-webkit-transform-origin: top center;
+					transform-origin: top center;
+			-webkit-animation: spin 2s linear infinite;
+					animation: spin 2s linear infinite;
+		}
+
+		.spinner-4
+
+
+	</style>
+</body>
+</html>

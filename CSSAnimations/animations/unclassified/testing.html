@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>CSS Animations: with JS</title>
+	<meta charset="utf-8">
+</head>
+<body>
+	<p>Number starts to change once you click</p>
+	<div class="digit"><div class="stripe">0123456789</div></div>
+
+
+	<style>
+		p{
+			color: red;
+		}
+		.stripe{
+			display: inline-block;
+		}
+
+		.digit{
+			font-size: 30px;
+			width: 0.5em;
+			overflow: hidden;
+			cursor: pointer;
+		}
+
+		.move{
+			transform: translate(-90%);
+			transition-property: transform;
+			transition-duration: 1s;
+			transition-timing-function: linear;
+			transition-direction: alternate;
+			transition-fill-mode: forwards;
+		}
+	</style>
+
+	<script>
+		let stripe= document.querySelector('.stripe');
+		stripe.onclick = function(){
+			stripe.classList.toggle('move');
+		}
+	</script>
+
+</body>
+</html>

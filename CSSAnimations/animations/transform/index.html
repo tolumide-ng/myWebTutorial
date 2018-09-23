@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+	<title>Animations: class 1</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+	<div class="trigger">	
+	<div class="box">
+	</div>
+	</div>
+
+
+	<div class="cover">
+		<div class="boxito"></div>
+	</div>
+
+	<script>
+		let cover= document.querySelector('.cover');
+		let boxito= document.querySelector('.boxito');
+
+		cover.onclick = function(){
+			boxito.classList.toggle('spin');
+		}
+
+	</script>
+</body>
+</html>

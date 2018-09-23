@@ -1,0 +1,92 @@
+body{
+	background: rgb(200, 100, 210);
+}
+
+.box{
+	height: 100px;
+	width: 100px;
+	background: orange;
+	margin: 50px;
+	border-radius: 50%;
+	animation-direction: alternate;
+	animation-duration: 7s;
+	animation-fill-mode: alternate;
+	animation-iteration-count: infinite;
+	animation-name: animate;
+	animation-play-state: running;
+	animation-timing-function: ease-in-out;
+}
+
+.pause{
+	animation-play-state: paused;
+}
+
+@keyframes animate {
+	0%{
+		background: green;
+		transform: translate(300px) scale(0.1);
+		border-radius: 50%;
+	}
+	50%{
+		background: grey;
+	}
+
+	100%{
+		background: orange;
+		border-radius: 50%;
+	}
+}
+
+
+.daughter{
+		width: 100px;
+		height: 100px;
+		background: rgb(100, 50, 200);
+		border-radius: 50%;
+		position: absolute;
+	}
+
+	.mother {
+		height: 100px;
+		width: 100px;
+		background: rgb(200, 100, 150);
+		border-radius: 50%;
+		border: 10px solid rgb(150 200 150);
+		position: absolute;
+		margin: auto 250px;
+		border-top: 10px solid white;
+		border-bottom: 10px solid white;
+		animation: turn 5s linear infinite;
+		animation-direction: alternate;
+	}
+
+	@keyframes turn{
+		0%{
+			transform: scale(0.2);
+			opacity: 0.5;
+			/*transform: rotate(0deg);*/
+		}
+		100%{
+			transform: scale(1);
+			transform: rotate(180deg);
+		}
+	}
+
+	.spinner{
+		width: 4px;
+		height: 100px;
+		background: orange;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform-origin: top center;
+		animation: spin 2s linear infinite;
+	}
+	@keyframes spin{
+		0%{
+			transform: rotate(0deg);
+		}
+		100%{
+			transform: rotate(360deg);
+		}
+	}
