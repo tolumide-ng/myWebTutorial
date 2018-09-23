@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+	<meta charset="utf-8">
+	<title>Mobile reodering</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+	 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+	<script>
+		$(function(){
+			$('.toggleNav').on('click', function(){
+				$('.flex-nav ul').toggleClass('open');
+			});
+		});
+	</script>
+	<div class="wrapper">
+		<header class="top">
+			<h1><a href="#">Tolumide-ng</a></h1>
+		</header>
+
+		<nav class="flex-nav">
+			<a href="#" class="toggleNav" ">☰Menu</a>
+			<ul>
+				<li><a href="#">Item 01</a></li>
+				<li><a href="#">Item 02</a></li>
+				<li><a href="#">Item 03</a></li>
+				<li><a href="#">Item 04</a></li>
+				<li><a href="#">Item 05</a></li>
+				<li><a href="#">Item 06</a></li>
+				<li class="social">
+					<a href="https://twitter.com/tolumide_ng"><i class="fa fa-twitter"></i></a>
+				</li>
+				<li class="social">
+					<a href="https://www.instagram.com/tolumide_ng/"><i class="fa fa-instagram"></i></a>
+				</li>
+				<li class="social">
+					<a href="https://github.com/tolumide-ng"><i class="fa fa-github"></i></a>
+				</li>
+			</ul>
+		</nav>
+
+
+		<section class="hero">
+			<img src="image.jpg">
+		</section>
+
+		<section class="details">
+			<p>A ship in harbor is safe — but that is not what ships are built for.” — John A. Shedd</p>
+			<p>Sign up today to view or videos or a tax-deductible donation to help fund our course
+			</p>
+		</section>
+
+
+		<section class="signup">
+			<form action=" " class="ok">
+				<input type="text" placeholder="Your name">
+				<input type="text" placeholder="Email Address">
+				<input type="submit" value="Sign me up!">
+			</form>
+		</section>
+
+		<footer>
+			<p>&copy; tolumide-ng</p>
+		</footer>
+	</div>
+</body>
+</html>
